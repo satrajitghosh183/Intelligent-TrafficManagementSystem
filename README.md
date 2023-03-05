@@ -31,3 +31,15 @@ number_plates = detect_number_plate(img)
 print(number_plates)
 Conclusion:
 The proposed intelligent traffic management system using YOLO V5 and Intel OneAPI toolkit, along with the number plate detection module, has the potential to significantly improve the flow of traffic, reduce congestion, and make commuting safer and more efficient. The system can be further improved in the future by integrating with other technologies, expanding to other cities, adding pedestrian detection, using predictive analytics, implementing smart parking solutions, using edge computing, and integrating with autonomous vehicles.
+
+![image](https://user-images.githubusercontent.com/83156880/222945625-b96d16a7-d108-4fbe-afdb-3ee5f15383ef.png)
+![New-Project-2022-08-01T122206 059](https://user-images.githubusercontent.com/83156880/222945657-827fbc90-c532-45bc-bd48-55a10d76490c.jpg)
+![Screenshot 2023-02-15 232519](https://user-images.githubusercontent.com/83156880/222945665-1d007c4a-beeb-44f9-89f7-9e26b84a53b3.jpg)
+![Screenshot 2023-02-16 143427](https://user-images.githubusercontent.com/83156880/222945684-ba0357bb-446c-4e4d-acfd-25248ed270d9.jpg)
+
+
+
+
+
+
+
