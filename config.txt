@@ -1,0 +1,52 @@
+Host devcloud
+User u188805
+IdentityFile ~/.ssh/devcloud-access-key-188805.txt
+ProxyCommand ssh -T -i ~/.ssh/devcloud-access-key-188805.txt guest@ssh.devcloud.intel.com
+Host devcloudx
+User u188805
+Port 4022
+IdentityFile ~/.ssh/devcloud-access-key-188805.txt
+ProxyCommand ssh -T devcloud-via-proxy
+
+Host devcloud-via-proxy
+User guest
+Hostname ssh.devcloud.intel.com
+IdentityFile ~/.ssh/devcloud-access-key-188805.txt
+LocalForward 4022 c009:22
+ProxyCommand <path_to_ncat_exe> --proxy PROXY_SERVER:PORT --proxy-type socks5 %h %p
+# DevCloud VSCode config:
+Host devcloud-vscode
+UserKnownHostsFile /dev/null
+StrictHostKeyChecking no
+Hostname localhost
+User u188805
+Port 5022
+IdentityFile ~/.ssh/devcloud-access-key-188805.txt
+
+#SSH Tunnel config:
+Host *.aidevcloud
+User u188805
+IdentityFile ~/.ssh/devcloud-access-key-188805.txt
+
+# uncomment to enable the tunnel over the direct line
+#ProxyCommand ssh -T devcloud nc %h %p
+
+# uncomment to enable the tunnel over the proxy line
+#ProxyCommand ssh -T devcloudx nc %h %p
+
+LocalForward 5022 localhost:22
+LocalForward 5901 localhost:5901
+{
+    "commandline": "ssh devcloud",
+    "guid": "{241213b4-e1a2-49ef-b8c0-22ae878f26b1}",
+    "hidden": false,
+    "name": "devcloud",
+    "tabTitle": "DevCloud"
+}
+{
+    "commandline": "ssh devcloudx",
+    "guid": "{14810d36-1f24-420d-9290-556321c0d7c6}",
+    "hidden": false,
+    "name": "devcloudx",
+    "tabTitle": "DevCloud"
+}
